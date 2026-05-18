@@ -13,12 +13,49 @@
     </header>
 
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+		<div class="card">
+				    <h2>Qual a melhor linguagem para iniciantes?</h2>
+				    <p>Selecione uma opção abaixo. Os votos são sincronizados em tempo real.</p>
+				    
+				    <div id="opcoes-container" style="margin-top: 1.5rem;">
+					<div class="opcao-voto" onclick="selecionarOpcao('Python', this)">
+						<input type="radio" name="linguagem" value="Python">
+						<label>Python</label>
+					</div>
+					
+					<div class="opcao-voto" onclick="selecionarOpcao('JavaScript', this)">
+						<input type="radio" name="linguagem" value="JavaScript">
+						<label>JavaScript</label>
+					</div>
+					
+					<div class="opcao-voto" onclick="selecionarOpcao('Java', this)">
+						<input type="radio" name="linguagem" value="Java">
+						<label>Java</label>
+					</div>
+					
+					<div class="opcao-voto" onclick="selecionarOpcao('C++', this)">
+						<input type="radio" name="linguagem" value="C++">
+						<label>C++</label>
+					</div>
+    </div>
+    
+    <div style="margin-top: 1.5rem;">
+        <button class="btn btn-primary" onclick="confirmarVoto()">Confirmar Voto</button>
+    </div>
+	
+	<div class="card" id="resultados-card">
+		<h3><span class="badge badge-aberta" style="margin-right: 10px;">AO VIVO</span>Resultados em Tempo Real</h3>
+		<div id="barras-container" style="margin-top: 1.5rem;">
+			<p style="color: var(--gray-mid); font-size: 0.9rem;">A carregar resultados da nuvem...</p>
+		</div>
+	</div>
+        {% endblock %}
     </main>
 
     <footer>
         <p>&copy; 2025 Sistema de Votação</p>
     </footer>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
