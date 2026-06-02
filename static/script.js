@@ -96,8 +96,4 @@ function atualizarGrafico(contagem, total) {
         `;
         container.innerHTML += htmlBarra;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 1d52da3e0ef02e035dd725a5d583317032b97c9c
